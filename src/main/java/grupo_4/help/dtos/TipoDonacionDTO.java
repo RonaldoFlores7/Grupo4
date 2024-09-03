@@ -1,11 +1,11 @@
 package grupo_4.help.dtos;
 
-public class TipoAyudaDTO {
-    private int idTipoAyuda;
+public class TipoDonacionDTO {
+    private int idTipoDonacion;
     private String descripcion;
 
-    public int getIdTipoAyuda() {
-        return idTipoAyuda;
+    public int getIdTipoDonacion() {
+        return idTipoDonacion;
     }
 
     public String getDescripcion() {
@@ -16,7 +16,7 @@ public class TipoAyudaDTO {
         this.descripcion = descripcion;
     }
 
-    public void setIdTipoAyuda(int idTipoAyuda) {
-        this.idTipoAyuda = idTipoAyuda;
+    public void setIdTipoDonacion(int idTipoDonacion) {
+        this.idTipoDonacion = idTipoDonacion;
     }
 }

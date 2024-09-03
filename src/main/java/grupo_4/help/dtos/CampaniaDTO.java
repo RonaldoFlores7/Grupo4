@@ -1,8 +1,8 @@
 package grupo_4.help.dtos;
 
 import grupo_4.help.entities.Distrito;
-import grupo_4.help.entities.TipoAyuda;
 import grupo_4.help.entities.TipoCampania;
+import grupo_4.help.entities.TipoDonacion;
 import grupo_4.help.entities.Usuario;
 
 import java.time.LocalDate;
@@ -11,7 +11,7 @@ public class CampaniaDTO {
     private int idCampania;
     private Usuario idDamnificado;
     private TipoCampania idTipoCampania;
-    private TipoAyuda idTipoAyuda;
+    private TipoDonacion idTipoDonacion;
     private Distrito idDistrito;
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
@@ -44,12 +44,12 @@ public class CampaniaDTO {
         this.idTipoCampania = idTipoCampania;
     }
 
-    public TipoAyuda getIdTipoAyuda() {
-        return idTipoAyuda;
+    public TipoDonacion getIdTipoDonacion() {
+        return idTipoDonacion;
     }
 
-    public void setIdTipoAyuda(TipoAyuda idTipoAyuda) {
-        this.idTipoAyuda = idTipoAyuda;
+    public void setIdTipoDonacion(TipoDonacion idTipoDonacion) {
+        this.idTipoDonacion = idTipoDonacion;
     }
 
     public Distrito getIdDistrito() {

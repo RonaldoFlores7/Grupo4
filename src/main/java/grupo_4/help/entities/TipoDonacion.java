@@ -3,30 +3,30 @@ package grupo_4.help.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name ="TipoAyuda")
-public class TipoAyuda {
+@Table(name ="TipoDonacion")
+public class TipoDonacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idTipoAyuda;
+    private int idTipoDonacion;
     @Column(name = "descripcion", nullable = false, length = 25)
     private String descripcion;
-    public TipoAyuda() {}
+    public TipoDonacion() {}
 
-    public TipoAyuda(int idTipoAyuda, String descripcion) {
-        this.idTipoAyuda = idTipoAyuda;
+    public TipoDonacion(int idTipoDonacion, String descripcion) {
+        this.idTipoDonacion = idTipoDonacion;
         this.descripcion = descripcion;
     }
 
-    public int getIdTipoAyuda() {
-        return idTipoAyuda;
+    public int getIdTipoDonacion() {
+        return idTipoDonacion;
     }
 
     public String getDescripcion() {
         return descripcion;
     }
 
-    public void setIdTipoAyuda(int idTipoAyuda) {
-        this.idTipoAyuda = idTipoAyuda;
+    public void setIdTipoDonacion(int idTipoDonacion) {
+        this.idTipoDonacion = idTipoDonacion;
     }
 
     public void setDescripcion(String descripcion) {

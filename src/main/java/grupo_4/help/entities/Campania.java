@@ -17,8 +17,8 @@ public class Campania {
     @JoinColumn(name = "idTipoCampania")
     private TipoCampania idTipoCampania;
     @ManyToOne
-    @JoinColumn(name = "idTipoAyuda")
-    private TipoAyuda idTipoAyuda;
+    @JoinColumn(name = "idTipoDonacion")
+    private TipoDonacion idTipoDonacion;
     @ManyToOne
     @JoinColumn(name = "idDistrito")
     private Distrito idDistrito;
@@ -38,11 +38,11 @@ public class Campania {
     public Campania() {
     }
 
-    public Campania(int idCampania, Usuario idDamnificado, TipoCampania idTipoCampania, TipoAyuda idTipoAyuda, Distrito idDistrito, LocalDate fechaInicio, LocalDate fechaFin, String cuentaDestino, String lugarDestinoViveres, String descripcionCampania, String estadoCampania) {
+    public Campania(int idCampania, Usuario idDamnificado, TipoCampania idTipoCampania, TipoDonacion idTipoDonacion, Distrito idDistrito, LocalDate fechaInicio, LocalDate fechaFin, String cuentaDestino, String lugarDestinoViveres, String descripcionCampania, String estadoCampania) {
         this.idCampania = idCampania;
         this.idDamnificado = idDamnificado;
         this.idTipoCampania = idTipoCampania;
-        this.idTipoAyuda = idTipoAyuda;
+        this.idTipoDonacion = idTipoDonacion;
         this.idDistrito = idDistrito;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
@@ -76,12 +76,12 @@ public class Campania {
         this.idTipoCampania = idTipoCampania;
     }
 
-    public TipoAyuda getIdTipoAyuda() {
-        return idTipoAyuda;
+    public TipoDonacion getIdTipoDonacion() {
+        return idTipoDonacion;
     }
 
-    public void setIdTipoAyuda(TipoAyuda idTipoAyuda) {
-        this.idTipoAyuda = idTipoAyuda;
+    public void setIdTipoDonacion(TipoDonacion idTipoDonacion) {
+        this.idTipoDonacion = idTipoDonacion;
     }
 
     public Distrito getIdDistrito() {

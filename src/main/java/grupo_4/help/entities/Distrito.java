@@ -9,7 +9,7 @@ public class Distrito {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDistrito;
 
-    @Column(name = "nombre", nullable = false, length = 20)
+    @Column(name = "nombreDistrito", nullable = false, length = 20)
     private String nombreDistrito;
 
     @ManyToOne

@@ -1,7 +1,5 @@
 package grupo_4.help.dtos;
 
-import java.time.LocalDate;
-
 public class TipoCampaniaDTO {
     private int idTipoCampania;
     private String descripcionTipoC;

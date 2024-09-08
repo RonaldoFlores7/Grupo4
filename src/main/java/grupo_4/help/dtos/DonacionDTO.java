@@ -16,8 +16,7 @@ public class DonacionDTO {
     private String estado;
     private Usuario us;
     private Campania ca;
-    private TipoDonacion ta;
-    public DonacionDTO() {}
+    private TipoDonacion td;
 
     public int getIdDonacion() {
         return idDonacion;
@@ -83,11 +82,11 @@ public class DonacionDTO {
         this.ca = ca;
     }
 
-    public TipoDonacion getTa() {
-        return ta;
+    public TipoDonacion getTd() {
+        return td;
     }
 
-    public void setTa(TipoDonacion ta) {
-        this.ta = ta;
+    public void setTd(TipoDonacion td) {
+        this.td = td;
     }
 }

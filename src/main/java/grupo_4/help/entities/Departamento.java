@@ -9,7 +9,7 @@ public class Departamento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDepartamento;
 
-    @Column(name = "nombre", nullable = false, length = 20)
+    @Column(name = "nombreDepartamento", nullable = false, length = 20)
     private String nombreDepartamento;
 
     public Departamento() {

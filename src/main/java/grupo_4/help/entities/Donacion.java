@@ -1,75 +1,54 @@
 package grupo_4.help.entities;
 
-
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 
 @Entity
-@Table(
-        name = "Donacion"
-)
+@Table(name = "Donacion")
 public class Donacion {
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDonacion;
-    @Column(
-            name = "telefono",
-            nullable = false
-    )
+
+    @Column(name = "telefono", nullable = false, length = 9)
     private String telefono;
-    @Column (
-            name = "montoTransferido",
-            nullable = false,
-            length = 9
-    )
+
+    @Column (name = "montoTransferido", nullable = false)
     private double montoTransferido;
-    @Column (
-            name = "descripcionDonac",
-            nullable = false
-    )
-    private String descripcionDonac;
-    @Column (
-            name = "fechaDonacion",
-            nullable = false,
-            length = 100
-    )
+
+    @Column (name = "descripcionDonacion", nullable = false)
+    private String descripcionDonacion;
+
+    @Column (name = "fechaDonacion", nullable = false, length = 100)
     private LocalDate fechaDonacion;
-    @Column (
-            name = "estado",
-            nullable = false,
-            length = 15
-    )
+
+    @Column (name = "estado", nullable = false, length = 15)
     private String estado;
+
     @ManyToOne
-    @JoinColumn(
-            name = "idUsuario"
-    )
+    @JoinColumn(name = "idUsuario")
     private Usuario us;
+
     @ManyToOne
-    @JoinColumn(
-            name = "idCampania"
-    )
+    @JoinColumn(name = "idCampania")
     private Campania ca;
+
     @ManyToOne
-    @JoinColumn(
-            name = "idTipoDonacion"
-    )
-    private TipoDonacion ta;
+    @JoinColumn(name = "idTipoDonacion")
+    private TipoDonacion td;
+
     public Donacion() {}
 
-    public Donacion(int idDonacion, String telefono, double montoTransferido, String descripcionDonac, LocalDate fechaDonacion, String estado, Usuario us, Campania ca, TipoDonacion ta) {
+    public Donacion(int idDonacion, String telefono, double montoTransferido, String descripcionDonacion, LocalDate fechaDonacion, String estado, Usuario us, Campania ca, TipoDonacion ta) {
         this.idDonacion = idDonacion;
         this.telefono = telefono;
         this.montoTransferido = montoTransferido;
-        this.descripcionDonac = descripcionDonac;
+        this.descripcionDonacion = descripcionDonacion;
         this.fechaDonacion = fechaDonacion;
         this.estado = estado;
         this.us = us;
         this.ca = ca;
-        this.ta = ta;
+        this.td = td;
     }
 
     public int getIdDonacion() {
@@ -96,12 +75,10 @@ public class Donacion {
         this.montoTransferido = montoTransferido;
     }
 
-    public String getDescripcionDonac() {
-        return descripcionDonac;
-    }
+    public String getDescripcionDonacion() { return descripcionDonacion;}
 
-    public void setDescripcionDonac(String descripcionDonac) {
-        this.descripcionDonac = descripcionDonac;
+    public void setDescripcionDonacion(String descripcionDonacion) {
+        this.descripcionDonacion = descripcionDonacion;
     }
 
     public String getEstado() {
@@ -136,11 +113,11 @@ public class Donacion {
         this.ca = ca;
     }
 
-    public TipoDonacion getTa() {
-        return ta;
+    public TipoDonacion getTd() {
+        return td;
     }
 
-    public void setTa(TipoDonacion ta) {
-        this.ta = ta;
+    public void setTd(TipoDonacion td) {
+        this.td = td;
     }
 }

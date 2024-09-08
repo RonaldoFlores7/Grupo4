@@ -9,4 +9,5 @@ public interface IPedirAyudaService {
     public void insert(PedirAyuda pedirAyuda);
     public void update(PedirAyuda pedirAyuda);
     public void delete(int idPedirAyuda);
+    public List<String[]> pedirAyudaPendientes();
 }

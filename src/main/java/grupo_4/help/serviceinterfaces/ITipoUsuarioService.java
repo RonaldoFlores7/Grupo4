@@ -8,4 +8,5 @@ public interface ITipoUsuarioService {
     public void insert(TipoUsuario tipoUsuario);
     public void update(TipoUsuario tipoUsuario);
     public void delete(int idTipoUsuario);
+    public List<String[]> cantidadUsuariosTipoUsuario();
 }

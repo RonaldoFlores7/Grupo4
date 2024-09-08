@@ -32,4 +32,9 @@ public class PedirAyudaServiceImplement implements IPedirAyudaService {
     public void delete(int idPedirAyuda) {
         paR.deleteById(idPedirAyuda);
     }
+
+    @Override
+    public List<String[]> pedirAyudaPendientes() {
+        return paR.pedirAyudaPendientes();
+    }
 }

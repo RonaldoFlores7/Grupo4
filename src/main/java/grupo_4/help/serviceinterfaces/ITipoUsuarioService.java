@@ -8,4 +8,8 @@ public interface ITipoUsuarioService {
     public void insert(TipoUsuario tipoUsuario);
     public void update(TipoUsuario tipoUsuario);
     public void delete(int idTipoUsuario);
+<<<<<<< HEAD
+=======
+    public List<String[]> cantidadUsuariosTipoUsuario();
+>>>>>>> 821d33a (Mis 2 consultas)
 }

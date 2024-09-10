@@ -1,8 +1,8 @@
 package grupo_4.help.dtos;
 
-public class QuantityPedirAyudaByDistrito {
+public class QuantityCampaignByDistrictDTO {
     private String nombreDistrito;
-    private int idPedirAyuda;
+    private int cantidadCampanias;
 
     public String getNombreDistrito() {
         return nombreDistrito;
@@ -12,12 +12,11 @@ public class QuantityPedirAyudaByDistrito {
         this.nombreDistrito = nombreDistrito;
     }
 
-    public int getIdPedirAyuda() {
-        return idPedirAyuda;
+    public int getCantidadCampanias() {
+        return cantidadCampanias;
     }
 
-    public void setIdPedirAyuda(int idPedirAyuda) {
-        this.idPedirAyuda = idPedirAyuda;
+    public void setCantidadCampanias(int cantidadCampanias) {
+        this.cantidadCampanias = cantidadCampanias;
     }
-
 }

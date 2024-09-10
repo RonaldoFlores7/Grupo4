@@ -1,7 +1,7 @@
 package grupo_4.help.controllers;
 
-import grupo_4.help.dtos.QuantityCampaniaByDistrito;
-import grupo_4.help.dtos.QuantityPedirAyudaByDistrito;
+import grupo_4.help.dtos.QuantityCampaignByDistrictDTO;
+import grupo_4.help.dtos.QuantityRequestHelpByDistrictDTO;
 import grupo_4.help.dtos.DistritoDTO;
 import grupo_4.help.entities.Distrito;
 import grupo_4.help.serviceinterfaces.IDistritoService;
@@ -47,31 +47,29 @@ public class DistritoController {
     }
 
     @GetMapping("/cantidadayuda")
-    public List<QuantityPedirAyudaByDistrito> cantidadcontroller() {
-        List<String[]> lista = dS.cantidadService();
-        List<QuantityPedirAyudaByDistrito> listarDTO = new ArrayList<>();
+    public List<QuantityRequestHelpByDistrictDTO> cantidadcontroller() {
+        List<String[]> lista = dS.cantidadPedirAyudaDistrito();
+        List<QuantityRequestHelpByDistrictDTO> listarDTO = new ArrayList<>();
         for (String[] columna : lista) {
-            QuantityPedirAyudaByDistrito dto = new QuantityPedirAyudaByDistrito();
+            QuantityRequestHelpByDistrictDTO dto = new QuantityRequestHelpByDistrictDTO();
             dto.setNombreDistrito(columna[0]);
-            dto.setIdPedirAyuda(Integer.parseInt(columna[1]));
+            dto.setCantidadPedirAyuda(Integer.parseInt(columna[1]));
             listarDTO.add(dto);
         }
         return listarDTO;
     }
 
-    @GetMapping("/cantidacampanias")
-    public List<QuantityCampaniaByDistrito> cantidadCcontroller() {
-        List<String[]> lista = dS.cantidadService();
-        List<QuantityCampaniaByDistrito> listarDTO = new ArrayList<>();
+    @GetMapping("/cantidadcampanias")
+    public List<QuantityCampaignByDistrictDTO> cantidadCcontroller() {
+        List<String[]> lista = dS.cantidadCampaniaDistrito();
+        List<QuantityCampaignByDistrictDTO> listarDTO = new ArrayList<>();
         for (String[] columna : lista) {
-            QuantityCampaniaByDistrito dto = new QuantityCampaniaByDistrito();
+            QuantityCampaignByDistrictDTO dto = new QuantityCampaignByDistrictDTO();
             dto.setNombreDistrito(columna[0]);
-            dto.setIdCampania(Integer.parseInt(columna[1]));
+            dto.setCantidadCampanias(Integer.parseInt(columna[1]));
             listarDTO.add(dto);
         }
         return listarDTO;
     }
-
-
 
 }

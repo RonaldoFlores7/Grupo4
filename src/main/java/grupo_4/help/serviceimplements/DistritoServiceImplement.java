@@ -34,14 +34,13 @@ public class DistritoServiceImplement implements IDistritoService {
     }
 
     @Override
-    public List<String[]> cantidadService() {
-        return dR.cantidad();
+    public List<String[]> cantidadPedirAyudaDistrito() {
+        return dR.cantidadPedirAyudaDistrito();
     }
 
     @Override
-    public List<String[]> cantidadCService() {
-        return dR.cantidadC();
+    public List<String[]> cantidadCampaniaDistrito() {
+        return dR.cantidadCampaniaDistrito();
     }
-
 
 }

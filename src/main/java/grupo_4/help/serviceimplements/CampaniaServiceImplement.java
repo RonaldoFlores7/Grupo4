@@ -32,4 +32,15 @@ public class CampaniaServiceImplement implements ICampaniaService {
     public void delete(int idCampania) {
         cR.deleteById(idCampania);
     }
+
+    @Override
+    public List<String[]> MontoTotalDonacionesporCampania() {
+        return cR.MontoTotalDonacionesporCampania();
+    }
+
+    @Override
+    public List<String[]> CantidadTotalVoluntariosporCampania() {
+        return cR.CantidadTotalVoluntariosporCampania();
+    }
+
 }

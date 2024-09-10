@@ -18,4 +18,14 @@ public interface IDonacionRepository extends JpaRepository<Donacion, Integer> {
             "ORDER BY mes;", nativeQuery = true)
     public List<String[]> DonacionesMonetariasPorMes();
 
+    @Query(value = "SELECT \n" +
+            "    u.nombre || ' ' || u.apellidos AS nombre_completo,\n" +
+            "    SUM(d.monto_transferido) AS total_donaciones \n" +
+            "FROM Donacion d \n" +
+            "JOIN Usuario u ON d.id_Usuario = u.id_Usuario \n" +
+            "WHERE d.id_Tipo_donacion = (SELECT id_Tipo_donacion FROM Tipo_donacion WHERE descripcion = 'Efectivo') \n" +
+            "GROUP BY nombre_completo \n" +
+            "ORDER BY total_donaciones DESC;", nativeQuery = true)
+    public List<String[]> DonacionesMonetariasPorUsuario();
+
 }

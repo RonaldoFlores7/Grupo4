@@ -9,4 +9,6 @@ public interface IDonacionService {
     void insert (Donacion donacion);
     void update (Donacion donacion);
     public List<String[]> DonacionesMonetariasPorMes();
+    public List<String[]> DonacionesMonetariasPorUsuario();
+
 }

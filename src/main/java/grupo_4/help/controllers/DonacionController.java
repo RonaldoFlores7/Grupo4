@@ -1,12 +1,16 @@
 package grupo_4.help.controllers;
 
 import grupo_4.help.dtos.DonacionDTO;
+import grupo_4.help.dtos.DonationsByMonthDTO;
+import grupo_4.help.dtos.PendingSendHelpDTO;
 import grupo_4.help.entities.Donacion;
 import grupo_4.help.serviceinterfaces.IDonacionService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,6 +38,20 @@ public class DonacionController {
         ModelMapper m = new ModelMapper();
         Donacion d = m.map(dto, Donacion.class);
         donS.update(d);
+    }
+
+    @GetMapping("/donacionesPorMes")
+    public List<DonationsByMonthDTO> DonacionesMonetariasPorMes() {
+        List<String[]> lista=donS.DonacionesMonetariasPorMes().reversed();
+        List<DonationsByMonthDTO> listaDTO=new ArrayList<>();
+        for (String[] columna:lista) {
+            DonationsByMonthDTO dto=new DonationsByMonthDTO();
+            dto.setMes((columna[0]).toString());
+            dto.setTotalDonaciones(Double.parseDouble(columna[1].toString()));
+            listaDTO.add(dto);
+        }
+
+        return listaDTO;
     }
 
 }

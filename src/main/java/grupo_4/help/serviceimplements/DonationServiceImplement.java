@@ -27,4 +27,8 @@ public class DonationServiceImplement implements IDonacionService {
         donR.save(donacion);
     }
 
+    @Override
+    public List<String[]> DonacionesMonetariasPorMes() {
+        return donR.DonacionesMonetariasPorMes();
+    }
 }

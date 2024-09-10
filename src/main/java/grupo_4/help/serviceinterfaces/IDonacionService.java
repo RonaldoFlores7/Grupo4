@@ -8,4 +8,5 @@ public interface IDonacionService {
     List<Donacion> list();
     void insert (Donacion donacion);
     void update (Donacion donacion);
+    public List<String[]> DonacionesMonetariasPorMes();
 }

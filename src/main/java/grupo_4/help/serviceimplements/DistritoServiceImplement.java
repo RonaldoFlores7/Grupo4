@@ -32,4 +32,16 @@ public class DistritoServiceImplement implements IDistritoService {
     public void delete(int idDistrito) {
         dR.deleteById(idDistrito);
     }
+
+    @Override
+    public List<String[]> cantidadService() {
+        return dR.cantidad();
+    }
+
+    @Override
+    public List<String[]> cantidadCService() {
+        return dR.cantidadC();
+    }
+
+
 }

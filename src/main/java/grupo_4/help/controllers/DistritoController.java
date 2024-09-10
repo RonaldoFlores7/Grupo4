@@ -1,7 +1,7 @@
 package grupo_4.help.controllers;
 
-import grupo_4.help.dtos.CantidadCampaniaByDistrito;
-import grupo_4.help.dtos.CantidadPedirAyudaByDistrito;
+import grupo_4.help.dtos.QuantityCampaniaByDistrito;
+import grupo_4.help.dtos.QuantityPedirAyudaByDistrito;
 import grupo_4.help.dtos.DistritoDTO;
 import grupo_4.help.entities.Distrito;
 import grupo_4.help.serviceinterfaces.IDistritoService;
@@ -47,11 +47,11 @@ public class DistritoController {
     }
 
     @GetMapping("/cantidadayuda")
-    public List<CantidadPedirAyudaByDistrito> cantidadcontroller() {
+    public List<QuantityPedirAyudaByDistrito> cantidadcontroller() {
         List<String[]> lista = dS.cantidadService();
-        List<CantidadPedirAyudaByDistrito> listarDTO = new ArrayList<>();
+        List<QuantityPedirAyudaByDistrito> listarDTO = new ArrayList<>();
         for (String[] columna : lista) {
-            CantidadPedirAyudaByDistrito dto = new CantidadPedirAyudaByDistrito();
+            QuantityPedirAyudaByDistrito dto = new QuantityPedirAyudaByDistrito();
             dto.setNombreDistrito(columna[0]);
             dto.setIdPedirAyuda(Integer.parseInt(columna[1]));
             listarDTO.add(dto);
@@ -60,11 +60,11 @@ public class DistritoController {
     }
 
     @GetMapping("/cantidacampanias")
-    public List<CantidadCampaniaByDistrito> cantidadCcontroller() {
+    public List<QuantityCampaniaByDistrito> cantidadCcontroller() {
         List<String[]> lista = dS.cantidadService();
-        List<CantidadCampaniaByDistrito> listarDTO = new ArrayList<>();
+        List<QuantityCampaniaByDistrito> listarDTO = new ArrayList<>();
         for (String[] columna : lista) {
-            CantidadCampaniaByDistrito dto = new CantidadCampaniaByDistrito();
+            QuantityCampaniaByDistrito dto = new QuantityCampaniaByDistrito();
             dto.setNombreDistrito(columna[0]);
             dto.setIdCampania(Integer.parseInt(columna[1]));
             listarDTO.add(dto);

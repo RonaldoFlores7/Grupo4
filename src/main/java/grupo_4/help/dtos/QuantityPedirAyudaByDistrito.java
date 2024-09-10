@@ -1,6 +1,6 @@
 package grupo_4.help.dtos;
 
-public class CantidadPedirAyudaByDistrito {
+public class QuantityPedirAyudaByDistrito {
     private String nombreDistrito;
     private int idPedirAyuda;
 

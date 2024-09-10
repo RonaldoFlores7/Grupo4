@@ -64,11 +64,11 @@ public class DonacionController {
         return listaDTO;
     }
     @GetMapping("/cantidadPorFecha")
-    public List<QuantityDonationsPerDayDTO> cantidadPorFecha(){
+    public List<QuantityDonationsPerDateDTO> cantidadPorFecha(){
         List<String[]> lista = donS.cantidadDonacionesPorFecha();
-        List<QuantityDonationsPerDayDTO> listaDTO = new ArrayList<>();
+        List<QuantityDonationsPerDateDTO> listaDTO = new ArrayList<>();
         for (String[] columna:lista){
-            QuantityDonationsPerDayDTO dto = new QuantityDonationsPerDayDTO();
+            QuantityDonationsPerDateDTO dto = new QuantityDonationsPerDateDTO();
             dto.setIdDonacion(Integer.parseInt(columna[0]));
             dto.setCantidadDonacionesPorFecha(Integer.parseInt(columna[1]));
             listaDTO.add(dto);

@@ -10,5 +10,6 @@ public interface IDonacionService {
     void update (Donacion donacion);
     public List<String[]> DonacionesMonetariasPorMes();
     public List<String[]> DonacionesMonetariasPorUsuario();
+    List<String[]> cantidadDonacionesPorFecha();
 
 }

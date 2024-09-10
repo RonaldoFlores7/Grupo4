@@ -1,9 +1,6 @@
 package grupo_4.help.controllers;
 
-import grupo_4.help.dtos.DonacionDTO;
-import grupo_4.help.dtos.DonationsByMonthDTO;
-import grupo_4.help.dtos.DonationsByUserDTO;
-import grupo_4.help.dtos.PendingSendHelpDTO;
+import grupo_4.help.dtos.*;
 import grupo_4.help.entities.Donacion;
 import grupo_4.help.serviceinterfaces.IDonacionService;
 import org.modelmapper.ModelMapper;
@@ -62,6 +59,18 @@ public class DonacionController {
             DonationsByUserDTO dto=new DonationsByUserDTO();
             dto.setNombreCompleto((columna[0]).toString());
             dto.setTotalDonaciones(Double.parseDouble(columna[1].toString()));
+            listaDTO.add(dto);
+        }
+        return listaDTO;
+    }
+    @GetMapping("/cantidadPorFecha")
+    public List<QuantityDonationsPerDayDTO> cantidadPorFecha(){
+        List<String[]> lista = donS.cantidadDonacionesPorFecha();
+        List<QuantityDonationsPerDayDTO> listaDTO = new ArrayList<>();
+        for (String[] columna:lista){
+            QuantityDonationsPerDayDTO dto = new QuantityDonationsPerDayDTO();
+            dto.setIdDonacion(Integer.parseInt(columna[0]));
+            dto.setCantidadDonacionesPorFecha(Integer.parseInt(columna[1]));
             listaDTO.add(dto);
         }
         return listaDTO;

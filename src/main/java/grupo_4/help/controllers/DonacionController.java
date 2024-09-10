@@ -2,6 +2,7 @@ package grupo_4.help.controllers;
 
 import grupo_4.help.dtos.DonacionDTO;
 import grupo_4.help.dtos.DonationsByMonthDTO;
+import grupo_4.help.dtos.DonationsByUserDTO;
 import grupo_4.help.dtos.PendingSendHelpDTO;
 import grupo_4.help.entities.Donacion;
 import grupo_4.help.serviceinterfaces.IDonacionService;
@@ -50,7 +51,19 @@ public class DonacionController {
             dto.setTotalDonaciones(Double.parseDouble(columna[1].toString()));
             listaDTO.add(dto);
         }
+        return listaDTO;
+    }
 
+    @GetMapping("/donacionesPorUsuario")
+    public List<DonationsByUserDTO> DonacionesMonetariasPorUsuario() {
+        List<String[]> lista=donS.DonacionesMonetariasPorUsuario().reversed();
+        List<DonationsByUserDTO> listaDTO=new ArrayList<>();
+        for (String[] columna:lista) {
+            DonationsByUserDTO dto=new DonationsByUserDTO();
+            dto.setNombreCompleto((columna[0]).toString());
+            dto.setTotalDonaciones(Double.parseDouble(columna[1].toString()));
+            listaDTO.add(dto);
+        }
         return listaDTO;
     }
 

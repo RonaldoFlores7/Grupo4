@@ -16,10 +16,11 @@ public interface ICampaniaRepository extends JpaRepository<Campania, Integer> {
             " GROUP BY ca.descripcion_campania" ,nativeQuery = true)
     public List<String[]> MontoTotalDonacionesporCampania();
 
-    @Query(value = "SELECT ca.descripcion_campania, COUNT(td.id_tipo_donacion) as CANTIDADTOTAL\n \n" +
+    @Query(value = "SELECT ca.descripcion_campania, COUNT(td.id_tipo_donacion) as CANTIDADTOTAL" +
             " FROM campania ca\n" +
             " INNER JOIN tipo_donacion td\n" +
             " ON ca.id_tipo_donacion = td.id_tipo_donacion\n" +
+            " WHERE td.descripcion = 'Voluntario' \n " +
             " GROUP BY ca.descripcion_campania" ,nativeQuery = true)
     public List<String[]> CantidadTotalVoluntariosporCampania();
 

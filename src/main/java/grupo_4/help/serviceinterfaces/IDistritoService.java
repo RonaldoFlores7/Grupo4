@@ -9,6 +9,6 @@ public interface IDistritoService {
     public void insert(Distrito distrito);
     public void update(Distrito distrito);
     public void delete(int idDistrito);
-    public List<String[]> cantidadService();
-    public List<String[]> cantidadCService();
+    public List<String[]> cantidadPedirAyudaDistrito();
+    public List<String[]> cantidadCampaniaDistrito();
 }

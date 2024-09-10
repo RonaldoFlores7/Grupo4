@@ -9,15 +9,15 @@ import java.util.List;
 
 @Repository
 public interface IDistritoRepository extends JpaRepository<Distrito, Integer> {
-    @Query(value = "Select d.nombre_distrito, sum (pa.id_pedir_ayuda) AS cantidad\n" +
+    @Query(value = "Select d.nombre_distrito, count(*) AS cantidadPedirAyudas\n" +
             " From distrito d INNER JOIN pedir_ayuda pa\n" +
-            " ON d.id_distrito=pa.id_pedir_ayuda\n" +
+            " ON d.id_distrito=pa.id_distrito\n" +
             " Group by d.nombre_distrito",nativeQuery = true)
-    public List<String[]> cantidad();
+    public List<String[]> cantidadPedirAyudaDistrito();
 
-    @Query(value = "Select d.nombre_distrito, sum (campania.id_campania) AS cantidadC\n" +
-            " From distrito d INNER JOIN campania campania\n" +
-            " ON d.id_distrito=campania.id_campania\n" +
+    @Query(value = "Select d.nombre_distrito, count(*) AS cantidadCampanias\n" +
+            " From distrito d INNER JOIN campania c\n" +
+            " ON d.id_distrito=c.id_distrito\n" +
             " Group by d.nombre_distrito",nativeQuery = true)
-    public List<String[]> cantidadC();
+    public List<String[]> cantidadCampaniaDistrito();
 }

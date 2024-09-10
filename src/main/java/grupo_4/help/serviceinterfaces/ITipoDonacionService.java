@@ -1,7 +1,9 @@
 package grupo_4.help.serviceinterfaces;
 
+import grupo_4.help.entities.Donacion;
 import grupo_4.help.entities.TipoDonacion;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface ITipoDonacionService {

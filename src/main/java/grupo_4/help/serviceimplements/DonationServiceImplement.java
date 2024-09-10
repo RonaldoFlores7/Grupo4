@@ -36,4 +36,9 @@ public class DonationServiceImplement implements IDonacionService {
     public List<String[]> DonacionesMonetariasPorUsuario() {
         return donR.DonacionesMonetariasPorUsuario();
     }
+    @Override
+    public List<String[]> cantidadDonacionesPorFecha() {
+        return donR.cantidadDonacionesPorFecha();
+    }
+
 }

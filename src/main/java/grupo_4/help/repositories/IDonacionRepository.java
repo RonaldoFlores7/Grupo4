@@ -28,4 +28,9 @@ public interface IDonacionRepository extends JpaRepository<Donacion, Integer> {
             "ORDER BY total_donaciones DESC;", nativeQuery = true)
     public List<String[]> DonacionesMonetariasPorUsuario();
 
+    @Query(value = "SELECT d.fecha_donacion, COUNT(*) AS CantidadDonacionesPorFecha " +
+            "FROM Donacion d GROUP BY d.fecha_donacion",
+            nativeQuery = true)
+    public List<String[]> cantidadDonacionesPorFecha();
+
 }

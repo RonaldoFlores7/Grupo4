@@ -1,10 +1,5 @@
 package grupo_4.help.dtos;
 
-<<<<<<< HEAD
-import java.time.LocalDate;
-
-=======
->>>>>>> 821d33a (Mis 2 consultas)
 public class TipoCampaniaDTO {
     private int idTipoCampania;
     private String descripcionTipoC;

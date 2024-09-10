@@ -42,4 +42,5 @@ public class CampaniaServiceImplement implements ICampaniaService {
     public List<String[]> CantidadTotalVoluntariosporCampania() {
         return cR.CantidadTotalVoluntariosporCampania();
     }
+
 }

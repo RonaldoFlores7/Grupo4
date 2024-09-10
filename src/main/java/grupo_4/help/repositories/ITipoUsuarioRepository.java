@@ -2,12 +2,6 @@ package grupo_4.help.repositories;
 
 import grupo_4.help.entities.TipoUsuario;
 import org.springframework.data.jpa.repository.JpaRepository;
-<<<<<<< HEAD
-import org.springframework.stereotype.Repository;
-
-@Repository
-public interface ITipoUsuarioRepository extends JpaRepository<TipoUsuario, Integer> {
-=======
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -19,5 +13,4 @@ public interface ITipoUsuarioRepository extends JpaRepository<TipoUsuario, Integ
             "from tipo_usuario tu inner join usuario u on tu.id_tipo_usuario = u.id_tipo_usuario\n" +
             "group by tu.nombre" ,nativeQuery = true)
     public List<String[]> cantidadUsuariosTipoUsuario();
->>>>>>> 821d33a (Mis 2 consultas)
 }

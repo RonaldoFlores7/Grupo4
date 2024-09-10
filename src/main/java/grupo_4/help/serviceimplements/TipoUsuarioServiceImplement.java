@@ -30,12 +30,9 @@ public class TipoUsuarioServiceImplement implements ITipoUsuarioService {
         tuR.deleteById(idTipoUsuario);
     }
 
-<<<<<<< HEAD
-=======
     @Override
     public List<String[]> cantidadUsuariosTipoUsuario() {
         return tuR.cantidadUsuariosTipoUsuario();
     }
 
->>>>>>> 821d33a (Mis 2 consultas)
 }

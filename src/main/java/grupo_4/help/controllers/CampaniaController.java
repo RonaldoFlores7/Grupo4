@@ -1,14 +1,15 @@
 package grupo_4.help.controllers;
 
 import grupo_4.help.dtos.CampaniaDTO;
-import grupo_4.help.dtos.DepartamentoDTO;
+import grupo_4.help.dtos.QuantityVolunteerByCampaniaDTO;
+import grupo_4.help.dtos.SumDonationsByCampaniaDTO;
 import grupo_4.help.entities.Campania;
-import grupo_4.help.entities.Departamento;
 import grupo_4.help.serviceinterfaces.ICampaniaService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -44,5 +45,34 @@ public class CampaniaController {
     public void eliminar(@PathVariable("id") Integer id) {
         caS.delete(id);
     }
+
+    @GetMapping("/montototaldonacionesxcampania")
+    public List<SumDonationsByCampaniaDTO>montototalController() {
+        List<String[]> lista = caS.MontoTotalDonacionesporCampania();
+        List<SumDonationsByCampaniaDTO> listaDTO = new ArrayList<>();
+        for (String[] columna : lista) {
+            SumDonationsByCampaniaDTO dto = new SumDonationsByCampaniaDTO();
+            dto.setDescripcionCampania(columna[0]);
+            dto.setMontoTransferido(Double.parseDouble(columna[1]));
+            listaDTO.add(dto);
+
+        }
+        return listaDTO;
+    }
+
+    @GetMapping("/cantidadtotalvoluntariosxcampania")
+    public List<QuantityVolunteerByCampaniaDTO>cantidadtotalvController(){
+        List<String[]> lista=caS.CantidadTotalVoluntariosporCampania();
+        List<QuantityVolunteerByCampaniaDTO> listaDTO=new ArrayList<>();
+        for(String[] columna:lista){
+            QuantityVolunteerByCampaniaDTO dto=new QuantityVolunteerByCampaniaDTO();
+            dto.setDescripcionCampania(columna [0]);
+            dto.setQuantityVolunteer(Integer.parseInt(columna [1]));
+            listaDTO.add(dto);
+
+        }
+        return listaDTO;
+    }
+
 
 }

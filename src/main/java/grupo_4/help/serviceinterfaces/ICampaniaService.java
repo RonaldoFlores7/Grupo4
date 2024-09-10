@@ -8,4 +8,7 @@ public interface ICampaniaService {
     public void insert(Campania campania);
     public void update(Campania campania);
     public void delete(int idCampania);
+    public List<String[]> MontoTotalDonacionesporCampania();
+    public List<String[]> CantidadTotalVoluntariosporCampania();
+
 }

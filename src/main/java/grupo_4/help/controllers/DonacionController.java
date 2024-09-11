@@ -69,7 +69,7 @@ public class DonacionController {
         List<QuantityDonationsPerDateDTO> listaDTO = new ArrayList<>();
         for (String[] columna:lista){
             QuantityDonationsPerDateDTO dto = new QuantityDonationsPerDateDTO();
-            dto.setIdDonacion(Integer.parseInt(columna[0]));
+            dto.setFecha(LocalDate.parse(columna[0]));
             dto.setCantidadDonacionesPorFecha(Integer.parseInt(columna[1]));
             listaDTO.add(dto);
         }

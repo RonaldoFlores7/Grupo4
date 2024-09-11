@@ -8,16 +8,18 @@ public class TipoUsuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTipoUsuario;
-
-    @Column(name = "nombre",nullable = false, length = 15)
-    private String nombre;
+    private String rol;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private Usuario user;
 
     public TipoUsuario() {
     }
 
-    public TipoUsuario(int idTipoUsuario, String nombre) {
+    public TipoUsuario(int idTipoUsuario, String rol, Usuario user) {
         this.idTipoUsuario = idTipoUsuario;
-        this.nombre = nombre;
+        this.rol = rol;
+        this.user = user;
     }
 
     public int getIdTipoUsuario() {
@@ -28,11 +30,19 @@ public class TipoUsuario {
         this.idTipoUsuario = idTipoUsuario;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getRol() {
+        return rol;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+    public Usuario getUser() {
+        return user;
+    }
+
+    public void setUser(Usuario user) {
+        this.user = user;
     }
 }

@@ -50,6 +50,7 @@ C:\Users\PC\Documents\GitHub\Grupo4\src\main\java\grupo_4\help\securities\JwtReq
 C:\Users\PC\Documents\GitHub\Grupo4\src\main\java\grupo_4\help\securities\JwtRequestFilter.java
 C:\Users\PC\Documents\GitHub\Grupo4\src\main\java\grupo_4\help\securities\JwtResponse.java
 C:\Users\PC\Documents\GitHub\Grupo4\src\main\java\grupo_4\help\securities\JwtTokenUtil.java
+C:\Users\PC\Documents\GitHub\Grupo4\src\main\java\grupo_4\help\securities\OpenAPIConfiguration.java
 C:\Users\PC\Documents\GitHub\Grupo4\src\main\java\grupo_4\help\securities\WebSecurityConfig.java
 C:\Users\PC\Documents\GitHub\Grupo4\src\main\java\grupo_4\help\serviceimplements\CampaniaServiceImplement.java
 C:\Users\PC\Documents\GitHub\Grupo4\src\main\java\grupo_4\help\serviceimplements\DepartamentoServiceImplement.java

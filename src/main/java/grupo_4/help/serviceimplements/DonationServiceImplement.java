@@ -6,6 +6,7 @@ import grupo_4.help.serviceinterfaces.IDonacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -39,6 +40,11 @@ public class DonationServiceImplement implements IDonacionService {
     @Override
     public List<String[]> cantidadDonacionesPorFecha() {
         return donR.cantidadDonacionesPorFecha();
+    }
+
+    @Override
+    public List<Donacion> findbyDate(LocalDate fechaSolicitada) {
+        return donR.buscarPorFecha(fechaSolicitada);
     }
 
 }

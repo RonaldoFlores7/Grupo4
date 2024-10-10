@@ -10,8 +10,8 @@ public class PedirAyudaDTO {
     private int idPedirAyuda;
     private String tipoDesastre;
     private String descripcion;
-    private Long latitud;
-    private Long longitud;
+    private float latitud;
+    private float longitud;
     private LocalDate fechaPedidoAyuda;
     private String estado;
     private Usuario u;
@@ -41,19 +41,19 @@ public class PedirAyudaDTO {
         this.descripcion = descripcion;
     }
 
-    public Long getLatitud() {
+    public float getLatitud() {
         return latitud;
     }
 
-    public void setLatitud(Long latitud) {
+    public void setLatitud(float latitud) {
         this.latitud = latitud;
     }
 
-    public Long getLongitud() {
+    public float getLongitud() {
         return longitud;
     }
 
-    public void setLongitud(Long longitud) {
+    public void setLongitud(float longitud) {
         this.longitud = longitud;
     }
 

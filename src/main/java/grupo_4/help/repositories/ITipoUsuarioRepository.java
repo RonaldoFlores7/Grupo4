@@ -9,8 +9,8 @@ import java.util.List;
 
 @Repository
 public interface ITipoUsuarioRepository extends JpaRepository<TipoUsuario, Integer> {
-    @Query(value ="select tu.nombre, count(*) as cantidad_usuarios\n" +
-            "from tipo_usuario tu inner join usuario u on tu.id_tipo_usuario = u.id_tipo_usuario\n" +
-            "group by tu.nombre" ,nativeQuery = true)
+    @Query(value ="select tu.rol, count(*) as cantidad_usuarios\n" +
+            "from tipo_usuario tu inner join usuario u on tu.user_id = u.id_usuario\n" +
+            "group by tu.rol" ,nativeQuery = true)
     public List<String[]> cantidadUsuariosTipoUsuario();
 }

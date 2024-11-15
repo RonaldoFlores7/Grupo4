@@ -14,9 +14,9 @@ public class PedirAyuda {
     @Column(name = "descripcion", nullable = false, length = 200)
     private String descripcion;
     @Column(name = "latitud", nullable = false)
-    private double latitud;
+    private float latitud;
     @Column(name = "longitud", nullable = false)
-    private double longitud;
+    private float longitud;
     @Column(name = "fechaPedidoAyuda", nullable = false)
     private LocalDate fechaPedidoAyuda;
     @Column(name = "estado", nullable = false, length = 15)
@@ -31,7 +31,7 @@ public class PedirAyuda {
     public PedirAyuda() {
     }
 
-    public PedirAyuda(int idPedirAyuda, String tipoDesastre, String descripcion, Long latitud, Long longitud, LocalDate fechaPedidoAyuda, String estado, Usuario u, Distrito d) {
+    public PedirAyuda(int idPedirAyuda, String tipoDesastre, String descripcion, float latitud, float longitud, LocalDate fechaPedidoAyuda, String estado, Usuario u, Distrito d) {
         this.idPedirAyuda = idPedirAyuda;
         this.tipoDesastre = tipoDesastre;
         this.descripcion = descripcion;
@@ -67,19 +67,19 @@ public class PedirAyuda {
         this.descripcion = descripcion;
     }
 
-    public double getLatitud() {
+    public float getLatitud() {
         return latitud;
     }
 
-    public void setLatitud(double latitud) {
+    public void setLatitud(float latitud) {
         this.latitud = latitud;
     }
 
-    public double getLongitud() {
+    public float getLongitud() {
         return longitud;
     }
 
-    public void setLongitud(double longitud) {
+    public void setLongitud(float longitud) {
         this.longitud = longitud;
     }
 

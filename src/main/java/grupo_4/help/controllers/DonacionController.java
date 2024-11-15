@@ -75,5 +75,11 @@ public class DonacionController {
         }
         return listaDTO;
     }
-
+    @GetMapping("/buscarPorFecha")
+    public List<DonacionDTO> buscarPorFecha(@RequestParam LocalDate fechaSolicitada) {
+        return donS.findbyDate(fechaSolicitada).stream().map(x -> {
+            ModelMapper m = new ModelMapper();
+            return m.map(x, DonacionDTO.class);
+        }).collect(Collectors.toList());
+    }
 }
